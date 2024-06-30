@@ -1,6 +1,6 @@
 # Restaurant Management System
 
-Welcome to the project of group 7, where we make a system to manage a restaurant. The system is divided into 8 parts as 8 functions of the management system, each of us handles 2 parts that listed down here.
+Welcome to the project of group 7, where we make a system to manage a restaurant. The system is divided into 8 parts as 6 functions of the management system, each of us handles 2 parts that listed down here.
 
 ## List of members
 
