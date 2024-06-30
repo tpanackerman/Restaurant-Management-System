@@ -5,6 +5,6 @@ Welcome to the project of group 7, where we make a system to manage a restaurant
 ## List of members
 
 - Dương Ngọc Hoài Anh: table booking and order management
-- Nguyễn Minh Hùng: receipt and paycheck, storage management
+- Nguyễn Minh Hùng: receipt and payment, storage management
 - Hoàng Tuấn Ngọc: staff management and data analysis
 - Trần Phi Anh Nhật: customers and menu management
