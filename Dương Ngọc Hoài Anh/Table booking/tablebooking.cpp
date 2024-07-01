@@ -109,7 +109,6 @@ public:
         for (int i = 0; i < soluongban; i++) {
             if (strstr(bans[i].tenkhach, ten) != NULL) {
                 hienthi(bans[i]);
-                return;
             }
         }
 
