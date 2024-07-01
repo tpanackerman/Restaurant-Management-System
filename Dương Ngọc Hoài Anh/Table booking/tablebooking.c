@@ -103,7 +103,6 @@ void timkiem(Quanlydatban *qldb) {
     for (int i = 0; i < qldb->soluongban; i++) {
         if (strstr(qldb->ban[i].tenkhach, ten) != NULL) {
             hienthi(qldb->ban[i]);
-            return;
         }
     }
 
