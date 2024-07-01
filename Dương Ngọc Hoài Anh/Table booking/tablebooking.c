@@ -31,24 +31,6 @@ void inhoa(char name[]) {
         }
     }
 
-void nhap(Quanlydatban *qldb) {
-    if (qldb->soluongban >= SOBANMAX) {
-        printf("Da het ban\n");
-        return;
-    }
-
-    printf("Nhap ten khach hang: ");
-    fgets(qldb->ban[qldb->soluongban].tenkhach, 100, stdin);
-    qldb->ban[qldb->soluongban].tenkhach[strcspn(qldb->ban[qldb->soluongban].tenkhach, "\n")] = 0; 
-    inhoa(qldb->ban[qldb->soluongban].tenkhach);
-
-    printf("Nhap so ban: ");
-    scanf("%d", &qldb->ban[qldb->soluongban].soban);
-    getchar(); 
-
-    qldb->soluongban++;
-}
-
 void datban(Quanlydatban *qldb) {
     if (qldb->soluongban >= SOBANMAX) {
         printf("Da het ban\n");
