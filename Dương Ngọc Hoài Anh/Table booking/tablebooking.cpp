@@ -105,15 +105,16 @@ public:
         cout << "Nhap ten khach hang: ";
         cin.getline(ten, 100);
         inhoa(ten);
+        int kt=0;
 
         for (int i = 0; i < soluongban; i++) {
             if (strstr(bans[i].tenkhach, ten) != NULL) {
+            	kt=1;
                 hienthi(bans[i]);
-                return;
             }
         }
-
-        cout << "Khong tim thay ban quy khach da dat!" << endl;
+        if(kt==0) cout<<"\nKhong tim thay khach hang\n";
+		
     }
 
     // danh sach ban duoc dat
