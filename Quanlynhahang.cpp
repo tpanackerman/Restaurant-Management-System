@@ -163,17 +163,18 @@ void timkiem(Quanlydatban *qldb) {
     fgets(ten, 100, stdin);
     ten[strcspn(ten, "\n")] = 0; 
     inhoa(ten);
-
+    int kt=0;
+    
     for (int i = 0; i < qldb->soluongban; i++) {
         if (strstr(qldb->ban[i].tenkhach, ten) != NULL) {
-            hienthi(qldb->ban[i]);
-            return;
-        }
+        	kt=1;
+            hienthi(qldb->ban[i]);    		   
+        }     
     }
+    if(kt==0) printf("\nKhong tim thay khach hang\n");
 
-    printf("\nKhong tim thay ban quy khach da dat!\n");
+
 }
-
 //Ham hien thi danh sach dat ban theo thu tu tang dan cua so ban
 void danhsachban(Quanlydatban *qldb) {
     for(int i = 0; i<qldb->soluongban-1; i++){
