@@ -36,17 +36,6 @@ public:
         }
     }
 
-    // nhap thong tin khach dat ban
-    void nhap() {
-        cout << "Nhap ten khach hang: ";
-        cin.getline(bans[soluongban].tenkhach, 100);
-        inhoa(bans[soluongban].tenkhach);
-        cout << "Nhap so ban: ";
-        cin >> bans[soluongban].soban;
-        cin.ignore();
-        soluongban++;
-    }
-
     // dat ban
     void datban() {
         if (soluongban >= sobanmax) {
