@@ -32,7 +32,7 @@ public:
     char chudau(char name[]) {
         inhoa(name);
         for (int i = strlen(name) - 1; i >= 0; i--) {
-            if (i == 0 || (i > 0 && isspace(name[i - 1]))) {
+            if (i == 0 || (i > 0 && name[i-1] == ' ')) {
                 return name[i];
             }
         }
