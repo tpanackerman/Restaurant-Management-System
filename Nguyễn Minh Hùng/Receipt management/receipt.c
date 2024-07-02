@@ -39,33 +39,33 @@ int main() {
     char nhapThem;
     PhuongThucThanhToan phuongThucThanhToan;
     char tenKH[50];
-    printf("Hóa đơn thanh toán\n");
+    printf("Hoa don thanh toan\n");
     printf("-----------------------------------\n");
-    printf("Nhập tên khách hàng: ");
+    printf("Nhap ten khach hang: ");
     scanf(" %[^\n]", tenKH);
     inHoa(tenKH);
     do {
-        printf("Nhập tên sản phẩm: ");
+        printf("Nhap ten san pham: ");
         scanf(" %[^\n]", sanPhams[soLuongSanPham].tenSanPham);
-        printf("Nhập giá sản phẩm: ");
+        printf("Nhap gia san pham: ");
         scanf("%lf", &sanPhams[soLuongSanPham].gia);
-        printf("Nhập số lượng sản phẩm: ");
+        printf("Nhap so luong san pham: ");
         scanf("%d", &sanPhams[soLuongSanPham].soLuong);
         soLuongSanPham++;
 
-        printf("Bạn có muốn nhập thêm sản phẩm không? (y/n): ");
+        printf("Ban co muon nhap them khong? (y/n): ");
         scanf(" %c", &nhapThem);
 
     } while (nhapThem == 'y' && soLuongSanPham < MAX_ITEMS);
 
     int luaChonThanhToan;
     do {
-        printf("Chọn phương thức thanh toán:\n");
-        printf("1. Tiền mặt\n");
-        printf("2. Thẻ tín dụng\n");
-        printf("3. Chuyển khoản ngân hàng\n");
-        printf("4. Ví điện tử\n");
-        printf("Lựa chọn của bạn là: ");
+        printf("Phuong thuc thanh toan:\n");
+        printf("1. Tien mat\n");
+        printf("2. The tin dung\n");
+        printf("3. Chuyen khoan ngan hang\n");
+        printf("4. Vi dien tu\n");
+        printf("Lua chon cua ban la: ");
         scanf("%d", &luaChonThanhToan);
         switch (luaChonThanhToan) {
             case 1:
@@ -100,10 +100,10 @@ void inHoaDon(SanPham sanPhams[], int soLuongSanPham, PhuongThucThanhToan phuong
     double tongTienSauThue = tongTien + thueVAT;
 
     printf("\nHÓA ĐƠN THANH TOÁN\n");
-    printf("Họ và tên khách hàng: %s\n", tenKH);
+    printf("Ho va ten khach hang: %s\n", tenKH);
     
     printf("---------------------------------------------------------------------\n");
-    printf("STT | Tên sản phẩm            | Giá          | Số lượng | Thành tiền\n");
+    printf("STT | Ten san pham            | Gia          | So luong | Thanh tien\n");
     printf("----|-------------------------|--------------|----------|------------\n");
     for (int i = 0; i < soLuongSanPham; i++) {
         double thanhTien = sanPhams[i].gia * sanPhams[i].soLuong;
@@ -113,38 +113,38 @@ void inHoaDon(SanPham sanPhams[], int soLuongSanPham, PhuongThucThanhToan phuong
     }
 
     printf("---------------------------------------------------------------------\n");
-    printf("Tổng cộng: %53.0lf đ\n", tongTien);
-    printf("Thuế VAT (10%%): %48.0lf đ\n", thueVAT);
+    printf("Tong cong: %53.0lf đ\n", tongTien);
+    printf("Thue VAT (10%%): %48.0lf đ\n", thueVAT);
     printf("==================================================================\n");
-    printf("Tổng tiền sau thuế: %44.0lf đ\n", tongTienSauThue);
-    printf("\nPhương thức thanh toán: ");
+    printf("Tong tien sau thue: %44.0lf đ\n", tongTienSauThue);
+    printf("\nPhuong thuc thanh toan: ");
     double tienKhachDua;
     switch (phuongThucThanhToan) {
         case TIEN_MAT: 
-            printf("Tiền mặt\n");
+            printf("Tien mat\n");
             do{
-                printf("Tiền khách đưa: ");
+                printf("Tien khach dua: ");
                 scanf("%lf", &tienKhachDua);
                 if (tienKhachDua >= tongTienSauThue) {
                     double tienThua = tienKhachDua - tongTienSauThue;
-                    printf("Tiền trả lại: %.0lf đ\n", tienThua);
+                    printf("Tien tra lai: %.0lf đ\n", tienThua);
                 } else {
-                    printf("Số tiền không đủ\n");
+                    printf("So tien khong du\n");
                 }
             }while(tienKhachDua < tongTienSauThue);
             break;
         case THE_TIN_DUNG:
-            printf("Thẻ tín dụng\n");
+            printf("The tin dung\n");
             break;
         case CHUYEN_KHOAN:
-            printf("Chuyển khoản ngân hàng\n");
+            printf("Chuyen khoan ngan hang\n");
             break;
         case VI_DIEN_TU:
-            printf("Ví điện tử\n");
+            printf("Vi dien tu\n");
             break;
     }
     printf("=================================================\n");
-    printf("Cảm ơn quý khách! Hẹn gặp lại!\n");
+    printf("Cam on quy khach! Hen gap lai!\n");
     printf("=================================================\n");
     FILE *file = fopen("hoa_don.txt", "r");
     
